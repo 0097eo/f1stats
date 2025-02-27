@@ -553,8 +553,8 @@ def get_lap_times(
 def get_telemetry(
     year: int, 
     gp: str, 
-    session_type: str = Query("R", description="Session type: FP1, FP2, FP3, Q, S, R (for Race)"),
-    driver_id: str = Query(..., description="Driver code (e.g., VER, HAM, LEC)")
+    session_type: str = Path("R", description="Session type: FP1, FP2, FP3, Q, S, R (for Race)"),
+    driver_id: str = Path(..., description="Driver code (e.g., VER, HAM, LEC)")
 ):
     """Get detailed telemetry for a driver's fastest lap"""
     logger.info(f"\n=== TELEMETRY FOR {driver_id} IN {year} {gp} {session_type} ===")
